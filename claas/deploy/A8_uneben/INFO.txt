@@ -1,0 +1,11 @@
+Name:        A8_uneben
+Beschreibung: A5 + unebener Boden (Rampen, Kanten bis 5 cm), Reserve
+Trainingsjob: 9419440   Lauf: /bigwork/nhkbrc2a/isaac/runs/logs/rsl_rl/unitree_g1_claas_23_rough/2026-11-22_16-21-12
+Checkpoint:  model_13996.pt
+Export aus:  runs/claas/play/9419441_FlatPush/exported (Videojob 9419441)
+Erstellt:    2026-11-23T10:57:10+01:00
+
+sha256:
+afc9c9e067584041a87a9e07ea630d58c0e7f6fb7f104229ada9e3738ad3dab8  policy.onnx
+dbd9b3cf6eeada6e6d84efa11210c7e878f7c8faf7625cbdf4f839c093d1c71e  policy.pt
+3f98981897e94fef057c71c296459a97594d709c7534102ab2664659fd2b46ba  deploy.yaml

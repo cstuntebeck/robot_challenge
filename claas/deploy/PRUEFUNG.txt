@@ -1,0 +1,7 @@
+PRUEF onnxruntime fehlt im Container - ONNX-Vergleich uebersprungen
+PRUEF claas/deploy/A2_eben/: Eingang 390, Ausgang 23
+PRUEF claas/deploy/A4_robust/: Eingang 390, Ausgang 23
+PRUEF claas/deploy/A5_robust_drehen/: Eingang 390, Ausgang 23
+PRUEF claas/deploy/A5s2_seed2/: Eingang 390, Ausgang 23
+PRUEF claas/deploy/A6_gangbild/: Eingang 390, Ausgang 23
+PRUEF claas/deploy/A8_uneben/: Eingang 390, Ausgang 23

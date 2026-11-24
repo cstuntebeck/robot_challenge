@@ -1,0 +1,11 @@
+Name:        A6_gangbild
+Beschreibung: wie A5 + Gangbild-Rewards (Alternative, Gang im Video pruefen)
+Trainingsjob: 9400164   Lauf: /bigwork/nhkbrc2a/isaac/runs/logs/rsl_rl/unitree_g1_claas_23_gait/2026-11-20_14-04-18
+Checkpoint:  model_9997.pt
+Export aus:  runs/claas/play/9400165_FlatPush/exported (Videojob 9400165)
+Erstellt:    2026-11-23T10:57:07+01:00
+
+sha256:
+57cedd6eabbcae1ff409277c18a4356060a3c7292c93c215c126eb135916c9e2  policy.onnx
+86172beea087b1db028e8a0df9914d1386e7cd21fc4e4d879a3993ef1090523e  policy.pt
+3f98981897e94fef057c71c296459a97594d709c7534102ab2664659fd2b46ba  deploy.yaml

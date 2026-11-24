@@ -1,0 +1,11 @@
+Name:        A5s2_seed2
+Beschreibung: A5-Rezept Seed 2, dreht in MuJoCo genauer (0,80 bei 0,8)
+Trainingsjob: 9419448   Lauf: /bigwork/nhkbrc2a/isaac/runs/logs/rsl_rl/unitree_g1_claas_23_robustturn/2026-11-22_16-38-58
+Checkpoint:  model_9997.pt
+Export aus:  runs/claas/play/9419449_Turn/exported (Videojob 9419449)
+Erstellt:    2026-11-23T10:57:09+01:00
+
+sha256:
+34d3c749f4c627bb92712c176c00a60ae86986f29a421f65bb7c14e8c4eb8c2a  policy.onnx
+f0c28c617179030be34001fb4ee0d0f577325390056b0a728a003409a5cc4d6d  policy.pt
+3f98981897e94fef057c71c296459a97594d709c7534102ab2664659fd2b46ba  deploy.yaml

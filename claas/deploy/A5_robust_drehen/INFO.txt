@@ -1,0 +1,11 @@
+Name:        A5_robust_drehen
+Beschreibung: HAUPTKANDIDAT: eben, Latenz 0-20ms, Motorstaerke +-10%, Drehen +-1rad/s
+Trainingsjob: 9399921   Lauf: /bigwork/nhkbrc2a/isaac/runs/logs/rsl_rl/unitree_g1_claas_23_robustturn/2026-11-20_13-57-37
+Checkpoint:  model_9997.pt
+Export aus:  runs/claas/play/9399922_FlatPush/exported (Videojob 9399922)
+Erstellt:    2026-11-23T10:57:06+01:00
+
+sha256:
+8a1229cc0e8d8b65e1df1838920add4e5f29cf6e16102871a33b2d176f0d240a  policy.onnx
+22d5fedb58d336b6a9a8274e3084f46a71622a6c171de59a453761dd89041b8a  policy.pt
+3f98981897e94fef057c71c296459a97594d709c7534102ab2664659fd2b46ba  deploy.yaml

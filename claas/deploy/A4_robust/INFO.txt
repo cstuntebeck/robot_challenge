@@ -1,0 +1,11 @@
+Name:        A4_robust
+Beschreibung: eben, Latenz + Motorstaerke, dreht kaum (Rueckfall)
+Trainingsjob: 9391705   Lauf: /bigwork/nhkbrc2a/isaac/runs/logs/rsl_rl/unitree_g1_claas_23_robust/2026-11-19_22-27-39
+Checkpoint:  model_6998.pt
+Export aus:  runs/claas/play/9391706_FlatPush/exported (Videojob 9391706)
+Erstellt:    2026-11-23T10:57:08+01:00
+
+sha256:
+6b66de9bec47229eedae377e821c2261568933f0c2936a88ff0cd3df1d40b4b6  policy.onnx
+ffaff760af250bc063a2e427e08af4d6584af98d12d635eb0deeb496e458a7b3  policy.pt
+3f98981897e94fef057c71c296459a97594d709c7534102ab2664659fd2b46ba  deploy.yaml

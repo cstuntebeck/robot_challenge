@@ -1,0 +1,11 @@
+Name:        A2_eben
+Beschreibung: eben, ohne Latenz/Motorstreuung (Basis)
+Trainingsjob: 9379135   Lauf: /bigwork/nhkbrc2a/isaac/runs/logs/rsl_rl/unitree_g1_claas_23_flattrack/2026-11-18_22-26-08
+Checkpoint:  model_3999.pt
+Export aus:  runs/claas/play/9379138_FlatPush/exported (Videojob 9379138)
+Erstellt:    2026-11-23T10:57:11+01:00
+
+sha256:
+99c2c3cf91ed2bcbfd68ac8798fe6345c1dd27acd00d0601913db59013e6fd2e  policy.onnx
+7633012007ff35a8f5d2d124d246b5510d8d69668ee2078e2be1305d4a36a5ed  policy.pt
+3f5ccb85ebe0ce6c036831e907dd128db8a94b577f00159fdfcbce6e3651728e  deploy.yaml
