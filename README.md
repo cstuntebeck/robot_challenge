@@ -80,6 +80,64 @@ Nicht im Repository:
 - `vendor/`: `unitree_rl_lab` (Commit 4960b84) und Isaac Lab, unverändert
 - `runs/`, `logs/`: Checkpoints, Videos, Slurm-Logs
 
+## Neuesten Stand auf den Cluster holen
+
+Das Arbeitsverzeichnis auf dem Cluster ist `/bigwork/nhkbrc2a/isaac`. Dort laufen alle Jobs, dort liegen auch `vendor/`, die Container und die Checkpoints. Die Skripte verwenden diesen Pfad fest, deshalb wird der Code genau dort aktualisiert.
+
+Für `git pull` braucht man keinen Token, weil das Repository öffentlich ist. Einen Token braucht man nur für `git push`.
+
+### Standardfall: Stand aktualisieren
+
+Block komplett kopieren und im Cluster-Terminal einfügen (OnDemand → *Clusters* → *Shell* oder per SSH):
+
+```bash
+cd /bigwork/nhkbrc2a/isaac && \
+git fetch origin && \
+git pull --ff-only origin main && \
+echo "=== aktueller Stand ===" && git log --oneline -5 && git status --short
+```
+
+Erwartete Ausgabe: oben die letzten fünf Commits, darunter **keine** Zeilen. Wenn unter `git status` Zeilen erscheinen, gibt es auf dem Cluster Änderungen, die noch nicht im Repository sind.
+
+### Wenn `git pull` abbricht
+
+Die typische Meldung ist *„Your local changes … would be overwritten“* oder *„Not possible to fast-forward“*. Dann gibt es auf dem Cluster eigene Änderungen. Nichts löschen, sondern erst ansehen:
+
+```bash
+cd /bigwork/nhkbrc2a/isaac && git status --short && git diff --stat
+```
+
+**Die eigenen Änderungen sollen ins Repository** (der Normalfall). Commit-Text anpassen, dann den Block kopieren:
+
+```bash
+cd /bigwork/nhkbrc2a/isaac && \
+git add cpr/ claas/ scripts/ docs/ README.md && \
+git commit -m "Änderungen auf dem Cluster: <kurz beschreiben>" && \
+git pull --rebase origin main && \
+git push origin main
+```
+
+Bei `git push` fragt GitHub nach Benutzername und Token (Fine-grained Token mit *Contents: Read and write* für `robot_challenge`).
+
+**Die eigenen Änderungen sind nur ein Versuch und sollen beiseitegelegt werden:**
+
+```bash
+cd /bigwork/nhkbrc2a/isaac && \
+git stash push -m "Versuch $(date +%F_%H%M)" && \
+git pull --ff-only origin main && \
+git stash list
+```
+
+Der Versuch ist nicht weg. `git stash pop` holt ihn zurück.
+
+### Nur lesen, z. B. auf dem eigenen Rechner
+
+```bash
+git clone https://github.com/cstuntebeck/robot_challenge.git && cd robot_challenge && git log --oneline -5
+```
+
+Zum Ausführen reicht das nicht: Container, `vendor/` und Checkpoints gibt es nur auf dem Cluster.
+
 ## Reproduzieren
 
 Umgebung: Isaac Sim 5.1, Isaac Lab 2.3.2 im Apptainer-Container auf dem LUIS-Cluster, GPU H200 (Partition `gpu` bzw. Reservierung `imes.gpu`).
@@ -126,5 +184,5 @@ Checkpoints liegen unter `runs/logs/rsl_rl/<experiment>/<Datum_Uhrzeit>/model_<I
 ## Zusammenarbeit
 
 - Ergebnisse und Entscheidungen: Notion, Teamspace RobotChallenge, Datenbank „Experimente“
-- Code: dieses Repository. Auf dem Cluster `git pull`, dann `sbatch`.
+- Code: dieses Repository. Auf dem Cluster den Stand holen (siehe [Neuesten Stand auf den Cluster holen](#neuesten-stand-auf-den-cluster-holen)), dann `sbatch`.
 - Neue Läufe: neue Klasse in `cpr/`, Task in `claas/unitree_run.py` registrieren, Eintrag in `docs/EXPERIMENTE.md` mit Frage, Änderung, Start-Checkpoint, Ergebnis und Schluss.
