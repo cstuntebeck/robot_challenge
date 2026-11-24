@@ -24,3 +24,14 @@ __pycache__/
 
 # Alte Sicherungskopien (Versionen stehen künftig in Git)
 *_vor_*.py
+
+# Externe Klone und erzeugte Assets in claas/
+claas/ext/
+*.onnx
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.pkl
+*.tar
+*.tar.gz
