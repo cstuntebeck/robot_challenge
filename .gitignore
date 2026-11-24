@@ -1,0 +1,26 @@
+# Große Daten und Ergebnisse – bleiben nur auf /bigwork
+runs/
+logs/
+vendor/
+assets/
+assets_local/
+containers/
+apptainer_cache/
+apptainer_tmp/
+downloads/
+
+# Modelle, Videos, Container
+*.pt
+*.pth
+*.mp4
+*.sif
+*.usd
+*.usda
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+
+# Alte Sicherungskopien (Versionen stehen künftig in Git)
+*_vor_*.py
